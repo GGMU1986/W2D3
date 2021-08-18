@@ -44,15 +44,19 @@ class Code
   end
   
   def num_near_matches(guess)
-    count = 0
+    arr_1 = []
+    arr_2 = []
 
-    (0...guess.length).each do |i|
-      if guess[i] != @pegs[i] && @pegs.include?(guess[i])
-        count += 1 
+    i = 0
+
+    guess.length.times do 
+      if guess[i] != @pegs[i]
+        arr_1 << guess[i]
+        arr_2 << @pegs[i]
       end
+      i += 1
     end
-    
-    count 
+    arr_1.uniq.count { |ele| arr_2.include?(ele) }
   end
 
   def ==(guess)
@@ -60,10 +64,10 @@ class Code
   end
 end
 
-  # @pegs = ["R", "G", "R", "B"]
-  # guess_1 = ["R", "G", "B", "B"] - 0
-  # guess_2 = ["R", "R", "B", "B"] - 1
-  # guess_3 = ["G", "R", "R", "R"] - 2
-  
-  # p num_near_matches(guess)
-  #new_pegs = ["R", "G", "B"]
+
+# 
+
+# 
+# guess_2 = ["R", "R", "B", "B"]
+# new_pegs = ["R", "G", "B"]
+#
