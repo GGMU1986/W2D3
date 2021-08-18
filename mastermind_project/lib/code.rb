@@ -65,9 +65,3 @@ class Code
 end
 
 
-# 
-
-# 
-# guess_2 = ["R", "R", "B", "B"]
-# new_pegs = ["R", "G", "B"]
-#
